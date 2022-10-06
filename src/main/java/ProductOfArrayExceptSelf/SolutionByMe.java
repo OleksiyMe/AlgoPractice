@@ -46,4 +46,3 @@ in postfixes are 1, because we have no factors outside the given array.
         24 12 8 6
 
         */
-```
