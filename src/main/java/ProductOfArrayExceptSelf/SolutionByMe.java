@@ -25,7 +25,7 @@ public class SolutionByMe {
         }
         return nums;
     }}
- /*   given array      1,  2,  3,  4
+  /*   given array      1,  2,  3,  4
 
         expected result 24,  12, 8,  6
 
@@ -33,16 +33,17 @@ we can divide factors for our expected products in two groups: prefix and postfi
 let us do it for each element of expected result. First element in prefixes and last
 in postfixes are 1, because we have no factors outside the given array.
 
-        24    1 (prefix) 		*  (2*3*4)(postfix) 			1 * 24
-        12    (1) (prefix)    	*  (3*4) (postfix)			    1*  12
-        8     (2*1) (prefix) 	*  (4)	(postfix)	        	2*  4
-        6     (1*2*3) (prefix)  *   1 (postfix)			    	6*  1
+        24    1 (prefix)         *  (2*3*4)(postfix)          1 * 24
+        12    (1) (prefix)        *  (3*4) (postfix)          1*  12
+        8     (2*1) (prefix)     *  (4)    (postfix)          2*  4
+        6     (1*2*3) (prefix)  *   1 (postfix)               6*  1
 
-        1  1  2 6     prefix   getting it in a first loop
-        24 12 4 1	postfix   getting it in a second loop
+        1  1  2 6     prefix.  we were getting it in a first loop
+        24 12 4 1    postfix.  we were getting it in a second loop
 
-        multiplying elements of prefix and postfix in a third loop and getting result
+        then we multiply elements of prefix and postfix in a third loop and get the result
 
         24 12 8 6
 
         */
+```

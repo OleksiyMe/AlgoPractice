@@ -21,7 +21,6 @@ public class MostWaterContainer {
         }
         return maxArea;
     }
-
 }
 
 /*
