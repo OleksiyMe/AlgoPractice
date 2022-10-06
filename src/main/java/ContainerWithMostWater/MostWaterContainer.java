@@ -6,9 +6,10 @@ public class MostWaterContainer {
 
     public static void main(String[] args) {
         int[] given = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        System.out.println("For our array of heights: \n"+ Arrays.toString(given));
+        System.out.println("For our array of heights: \n" + Arrays.toString(given));
         System.out.println("Max water volume is: " + maxWaterVolume(given));
     }
+
     private static int maxWaterVolume(int[] given) {
         int maxArea = 0;   //
         int leftPointer = 0, rightPointer = given.length - 1;
@@ -16,6 +17,7 @@ public class MostWaterContainer {
         while (leftPointer != rightPointer) {
             int area = Math.min(given[leftPointer], given[rightPointer]) * (rightPointer - leftPointer);
             if (area > maxArea) maxArea = area;
+            // maxArea=Math.max(maxArea,area);
             if (given[leftPointer] < given[rightPointer]) leftPointer++;
             else rightPointer--;
         }
