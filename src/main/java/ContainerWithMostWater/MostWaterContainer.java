@@ -5,20 +5,20 @@ import java.util.Arrays;
 public class MostWaterContainer {
 
     public static void main(String[] args) {
-        int[] given = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        System.out.println("For our array of heights: \n" + Arrays.toString(given));
-        System.out.println("Max water volume is: " + maxWaterVolume(given));
+        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        System.out.println("For our array of heights: \n" + Arrays.toString(height));
+        System.out.println("Max water volume is: " + maxWaterVolume(height));
     }
 
-    private static int maxWaterVolume(int[] given) {
+    private static int maxWaterVolume(int[] height) {
         int maxArea = 0;   //
-        int leftPointer = 0, rightPointer = given.length - 1;
+        int leftPointer = 0, rightPointer = height.length - 1;
 
         while (leftPointer != rightPointer) {
-            int area = Math.min(given[leftPointer], given[rightPointer]) * (rightPointer - leftPointer);
+            int area = Math.min(height[leftPointer], height[rightPointer]) * (rightPointer - leftPointer);
             if (area > maxArea) maxArea = area;
             // maxArea=Math.max(maxArea,area);
-            if (given[leftPointer] < given[rightPointer]) leftPointer++;
+            if (height[leftPointer] < height[rightPointer]) leftPointer++;
             else rightPointer--;
         }
         return maxArea;
@@ -26,7 +26,7 @@ public class MostWaterContainer {
 }
 
 /*
-You are given an integer array of heights of length n. There are n vertical lines drawn such that
+You are height an integer array of heights of length n. There are n vertical lines drawn such that
 the two endpoints of the ith line are (i, 0) and (i, height[i]).
 Find two lines that together with the x-axis form a container, such that the container contains
 the most water. Return the maximum amount of water a container can store.
