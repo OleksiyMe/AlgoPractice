@@ -34,8 +34,9 @@ public class IntersectionOfTwoLinkedLists2Pointers {
 
     private static Node giveMeIntersection(Node headA, Node headB) {
 
-        Node pointer1 = headB;
-        Node pointer2 = headA;
+        if (headA==headB) return headB;
+        Node pointer1 = headA;
+        Node pointer2 = headB;
 
         int steps1 = 0, steps2 = 0;
 
@@ -51,7 +52,7 @@ public class IntersectionOfTwoLinkedLists2Pointers {
                 steps2++;
             }
         }
-        if (steps2>steps1) {
+        if (steps2>=steps1) {
             int k = steps2 - steps1;
             pointer1 = headA;
             pointer2 = headB;
@@ -66,12 +67,12 @@ public class IntersectionOfTwoLinkedLists2Pointers {
             pointer1 = headA;
             pointer2 = headB;
             for (int i = 1; ; i++) {
-                if (i > k) pointer1 = pointer1.next;
-                pointer2 = pointer2.next;
+                if (i > k) pointer2 = pointer2.next;
+                pointer1 = pointer1.next;
                 if (pointer1 == pointer2) return pointer1;
             }
         }
-       return null;
+        return null;
     }
 
 

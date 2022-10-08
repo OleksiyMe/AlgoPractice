@@ -2,7 +2,7 @@ package intersectionOfTwoLinkedLists;
 
 import java.util.HashSet;
 
-public class IntersectionOfTwoLinkedListsHashmap {
+public class IntersectionOfTwoLinkedListsHashSet {
     public static void main(String[] args) {
 
         Node b1 = new Node("b1");
