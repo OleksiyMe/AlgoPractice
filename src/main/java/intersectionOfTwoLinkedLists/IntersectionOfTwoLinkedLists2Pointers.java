@@ -29,31 +29,27 @@ public class IntersectionOfTwoLinkedLists2Pointers {
         Node current2 = sll2.head;
 
         System.out.println(giveMeIntersection(current2, current1));
-
     }
 
     private static Node giveMeIntersection(Node headA, Node headB) {
-
-        if (headA==headB) return headB;
         Node pointer1 = headA;
         Node pointer2 = headB;
-
         int steps1 = 0, steps2 = 0;
 
-        while (!(pointer1.next ==null && pointer2.next ==null)) {
-            if (pointer1.next != null) {
+        if (headA == headB) return headA;
 
+        while (!(pointer1.next == null && pointer2.next == null)) {
+            if (pointer1.next != null) {
                 pointer1 = pointer1.next;
                 steps1++;
             }
             if (pointer2.next != null) {
-
                 pointer2 = pointer2.next;
                 steps2++;
             }
         }
-        if (steps2>=steps1) {
-            int k = steps2 - steps1;
+        int k = steps2 - steps1;
+        if (k >= 0) {
             pointer1 = headA;
             pointer2 = headB;
             for (int i = 1; ; i++) {
@@ -62,17 +58,17 @@ public class IntersectionOfTwoLinkedLists2Pointers {
                 if (pointer1 == pointer2) return pointer1;
             }
         }
-        if (steps1>steps2) {
-            int k = steps1 - steps2;
+        if (k<0) {
             pointer1 = headA;
             pointer2 = headB;
             for (int i = 1; ; i++) {
-                if (i > k) pointer2 = pointer2.next;
+                if (i > (-k)) pointer2 = pointer2.next;
                 pointer1 = pointer1.next;
                 if (pointer1 == pointer2) return pointer1;
             }
         }
         return null;
+
     }
 
 

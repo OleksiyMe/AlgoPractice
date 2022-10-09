@@ -28,7 +28,7 @@ public class IntersectionOfTwoLinkedListsHashSet {
         Node current1 = sll1.head;
         Node current2 = sll2.head;
 
-        System.out.println( giveMeIntersection(current1,current2));
+        System.out.println(giveMeIntersection(current1, current2));
 
     }
 
@@ -36,18 +36,20 @@ public class IntersectionOfTwoLinkedListsHashSet {
 
 
         HashSet<Node> hashset = new HashSet<>();
-        for (;;){
+        for (; ; ) {
 
-            if(headA!=null)
-            {if(!hashset.add(headA)) return headA;}
-            if(headB!=null)
-            {if(!hashset.add(headB)) return headB;}
+            if (headA != null) {
+                if (!hashset.add(headA)) return headA;
+            }
+            if (headB != null) {
+                if (!hashset.add(headB)) return headB;
+            }
 
-            if (headA!=null) headA=headA.next;
-            else if(headB==null) break;
+            if (headA != null) headA = headA.next;
+            else if (headB == null) break;
 
-            if (headB!=null) headB=headB.next;
-            else if(headA==null) break;
+            if (headB != null) headB = headB.next;
+            else if (headA == null) break;
 
         }
         return null;
