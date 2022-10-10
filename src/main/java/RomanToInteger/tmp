@@ -1,0 +1,41 @@
+Map.ofEntries(
+                        entry("I", 1),
+                        entry("II", 2),
+                        entry("III", 3),
+                        entry("IV", 4),
+                        entry("V", 5),
+                        entry("IX", 9),
+                        entry("X", 10),
+                        entry("XL", 40),
+                        entry("L", 50),
+                        entry("XC", 90),
+                        entry("C", 100),
+                        entry("CD", 400),
+                        entry("D", 500),
+                        entry("CM", 900),
+                        entry("M", 1000)
+                        )
+
+Map.ofEntries(
+                        entry("M", 1000),
+
+                        entry("CM", 900),
+
+                        entry("CD", 400),
+                        entry("XC", 90),
+                        entry("XL", 40),
+
+
+                        entry("D", 500),
+                        entry("C", 100),
+                        entry("L", 50),
+                        entry("IV", 4),
+                        entry("IX", 9),
+
+                        entry("V", 5),
+                        entry("X", 10),
+                        entry("III", 3),
+                        entry("II", 2),
+                        entry("I", 1)
+
+                )
