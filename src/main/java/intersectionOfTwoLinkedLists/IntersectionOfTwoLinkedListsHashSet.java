@@ -40,17 +40,13 @@ public class IntersectionOfTwoLinkedListsHashSet {
 
             if (headA != null) {
                 if (!hashset.add(headA)) return headA;
-            }
+                headA = headA.next;
+            } else if (headB == null) break;
+
             if (headB != null) {
                 if (!hashset.add(headB)) return headB;
-            }
-
-            if (headA != null) headA = headA.next;
-            else if (headB == null) break;
-
-            if (headB != null) headB = headB.next;
-            else if (headA == null) break;
-
+                headB = headB.next;
+            } else if (headA == null) break;
         }
         return null;
     }
