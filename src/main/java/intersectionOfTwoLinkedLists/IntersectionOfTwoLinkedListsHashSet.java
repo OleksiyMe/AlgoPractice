@@ -36,7 +36,8 @@ public class IntersectionOfTwoLinkedListsHashSet {
 
 
         HashSet<Node> hashset = new HashSet<>();
-        for (; ; ) {
+
+        for (; ;) {
             if (headA != null) {
                 if (!hashset.add(headA)) return headA;
                 headA = headA.next;
