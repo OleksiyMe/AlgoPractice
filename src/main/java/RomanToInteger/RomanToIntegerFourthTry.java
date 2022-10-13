@@ -2,7 +2,7 @@ package RomanToInteger;
 
 import java.util.HashMap;
 
-public class RomanToIntegerForthTry {
+public class RomanToIntegerFourthTry {
     public static void main(String[] args) {
 
         String input = "MCMXCIV";
