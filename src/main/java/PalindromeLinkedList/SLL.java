@@ -1,5 +1,10 @@
 package PalindromeLinkedList;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class SLL<T> {
     Node<T> head;
 

@@ -4,17 +4,17 @@ import java.util.HashMap;
 
 public class SingleNumber_OptimalXOR {
     public static void main(String[] args) {
-        int[] nums = {4, 1, 2, 1, 2};
+        int[] nums = { 1, 2, 1, 2, 4};
         System.out.println(singleNumber(nums));
 
     }
 
     public static int singleNumber(int[] nums) {
-        int res = 0;
-        for (int x : nums) {
-            res ^= x;
+        int result = 0;
+        for (int eachNum : nums) {
+            result ^= eachNum;
         }
-        return res;
+        return result;
 
     }
 }
