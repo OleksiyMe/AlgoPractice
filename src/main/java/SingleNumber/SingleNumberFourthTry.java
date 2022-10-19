@@ -7,9 +7,7 @@ public class SingleNumberFourthTry {
     public static void main(String[] args) {
         int[] nums = {-4, 1, 2, 1, 2};
         System.out.println(singleNumber(nums));
-
     }
-
     private static int singleNumber(int[] nums) {
         Set<Integer> set = new HashSet<>();
         int sumOfAllElements = 0;
@@ -23,10 +21,8 @@ public class SingleNumberFourthTry {
     }
 
 /*4,1,1,2,2
-
-    4+1+2  = 7
-    10
-    14 -10 = 4*/
-
-
+    4+1+2  = 7   sum of unique elements
+    10              sum of all elements
+    2*7 -10 = 4      the difference - is our searching element
+    */
 }
