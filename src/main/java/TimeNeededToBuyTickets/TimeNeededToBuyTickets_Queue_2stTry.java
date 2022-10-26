@@ -14,15 +14,15 @@ public class TimeNeededToBuyTickets_Queue_2stTry {
     }
 
     private static int timeRequiredToBuy(int[] tickets, int k) {
-        int result = 0;
+        /*int result = 0;
         for (int i = 0; tickets[k] > 0; i++) {
             if (i == tickets.length) i = 0;
             if (tickets[i] > 0) {
                 tickets[i] = tickets[i] - 1;
                 result++;
             }
-        }
-        return result;
+        }*/
+        return 0;
 
 
     }
