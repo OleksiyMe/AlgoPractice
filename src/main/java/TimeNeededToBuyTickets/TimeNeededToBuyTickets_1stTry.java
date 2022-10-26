@@ -12,9 +12,10 @@ public class TimeNeededToBuyTickets_1stTry {
     }
 
     private static int timeRequiredToBuy(int[] tickets, int k) {
-        int result = 0;
+        int result = 0, length=tickets.length;
+
         for (int i = 0; tickets[k] > 0; i++) {
-            if (i == tickets.length) i = 0;
+            if (i == length) i = 0;
             if (tickets[i] > 0) {
                 tickets[i] = tickets[i] - 1;
                 result++;
