@@ -19,7 +19,6 @@ public class TimeNeededToBuyTickets_1stTry {
             if (tickets[i] > 0) {
                 tickets[i] = tickets[i] - 1;
                 result++;
-
             }
         }
         return result;
