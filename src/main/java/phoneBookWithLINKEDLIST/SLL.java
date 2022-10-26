@@ -26,7 +26,7 @@ public class SLL {
         Node current = head;
         while (current != null) {
 
-            System.out.println(current);
+            System.out.println(current.value);
             current = current.next;
         }
     }
@@ -67,7 +67,7 @@ public class SLL {
         Node current = head;
         while (current != null) {
 
-            if (current.value.firstName.equals(lastName)) {
+            if (current.value.lastName.equals(lastName)) {
                 myList.add(current);
             }
             current = current.next;
@@ -106,5 +106,50 @@ public class SLL {
 
     }
 
+    public void  deleteAllMatchingLastName( String lastName){
+        if (isEmpty())
+            throw new NoSuchElementException("No records with firstName: " + lastName);
+        Node current = head, previous = head;
+        while (current != null) {
+
+            if (current.value.lastName.equals(lastName)) {
+                if (current == head) {
+                    if (size == 1) {
+                        head = null;
+                        tail = null;
+                    } else {
+                        head = current.next;
+                    }
+                } else if (current == tail) {
+                    tail = previous;
+                    tail.next = null;
+                } else {
+                    previous.next = current.next;
+
+                }
+                size--;
+
+            }
+            previous=current;
+            current=current.next;
+        }
+    }
+
+    public List<Node> findAll(){
+
+        if (isEmpty()) throw new NoSuchElementException("SLL is empty");
+
+        List<Node> list =new ArrayList<>();
+
+        Node current=head;
+        while (current!=null){
+
+            list.add(current);
+            current=current.next;
+
+        }
+
+        return list;
+    }
 
 }
