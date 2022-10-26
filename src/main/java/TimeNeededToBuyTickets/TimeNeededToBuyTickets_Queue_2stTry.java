@@ -1,6 +1,8 @@
 package TimeNeededToBuyTickets;
 
-public class TimeNeededToBuyTickets_1stTry {
+import java.util.PriorityQueue;
+
+public class TimeNeededToBuyTickets_Queue_2stTry {
 
     public static void main(String[] args) {
 
@@ -21,6 +23,9 @@ public class TimeNeededToBuyTickets_1stTry {
             }
         }
         return result;
+
+
     }
+
 
 }
