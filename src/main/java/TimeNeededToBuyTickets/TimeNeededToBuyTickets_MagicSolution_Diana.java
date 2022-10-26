@@ -1,6 +1,6 @@
 package TimeNeededToBuyTickets;
 
-public class TimeNeededToBuyTickets_Queue_FastSolutionSumeyseWrongAnswer {
+public class TimeNeededToBuyTickets_MagicSolution_Diana {
 
     public static void main(String[] args) {
 
@@ -12,16 +12,14 @@ public class TimeNeededToBuyTickets_Queue_FastSolutionSumeyseWrongAnswer {
     }
 
     private static int timeRequiredToBuy(int[] tickets, int k) {
-        int result = 0;
-        for (int i = 0; i < tickets.length; i++) {
+        int count = 0;
 
-            if (tickets[i] < tickets[k]) {
-                result += tickets[k];
-            } else {
-                if (i <= k) result += tickets[k];
-                else result += tickets[k] - 1;
-            }
+        for (int i = 0; i < tickets.length; i++) {
+            if(i <= k)
+                count += Math.min(tickets[i], tickets[k]);
+            else count += Math.min(tickets[k] - 1, tickets[i]);
         }
-        return result;
+
+        return count;
     }
 }
