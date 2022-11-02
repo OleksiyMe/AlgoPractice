@@ -16,13 +16,13 @@ public class DeleteNnodesAfterMnodesOfSLL_1try {
         sllResult.print();
     }
 
-    public static Node deleteNodes(Node<Integer> head, int m, int n) {
+    public static<T> Node<T> deleteNodes(Node<T> head, int m, int n) {
 
-        Node current = head, previous = null;
+        Node<T> current = head, previous = null;
         int counter_m = m, counter_n = n;
         if (head == null) throw new NoSuchElementException("SLL is empty");
-        while (current != null) {
 
+        while (current != null) {
             if (counter_m > 0) {
                 previous = current;
                 current = current.next;
@@ -37,7 +37,6 @@ public class DeleteNnodesAfterMnodesOfSLL_1try {
             }
             counter_m = m;
             counter_n = n;
-
         }
         return head;
     }
