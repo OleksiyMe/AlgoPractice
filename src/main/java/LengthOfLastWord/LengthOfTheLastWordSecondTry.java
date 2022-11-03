@@ -1,4 +1,4 @@
-package LengsOfLastWord;
+package LengthOfLastWord;
 
 public class LengthOfTheLastWordSecondTry {
 
