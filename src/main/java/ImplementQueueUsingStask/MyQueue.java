@@ -25,10 +25,8 @@ public class MyQueue {
     public Integer dequeue() {
         return stack.pop();
     }
-
-    public boolean isEmpty() {
+  public boolean isEmpty() {
         return stack.size() == 0;
-
     }
 
     public Integer peek() {
