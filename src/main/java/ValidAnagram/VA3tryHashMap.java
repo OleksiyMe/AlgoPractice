@@ -3,7 +3,7 @@ package ValidAnagram;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ValidAnagram3tryHashMap {
+public class VA3tryHashMap {
 
 
     public static void main(String[] args) {

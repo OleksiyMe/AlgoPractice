@@ -1,6 +1,6 @@
 package ValidAnagram;
 
-public class ValidAnagram1stTryStringConcatSLOW {
+public class VA1stTryStringConcatSLOW {
 
 
     public static void main(String[] args) {

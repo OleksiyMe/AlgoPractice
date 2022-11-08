@@ -1,6 +1,6 @@
 package ValidAnagram;
 
-public class ValidAnagram1stTryStringBuilder {
+public class VA1stTryStringBuilder {
 
 
     public static void main(String[] args) {

@@ -2,7 +2,7 @@ package ValidAnagram;
 
 import java.util.Arrays;
 
-public class ValidAnagram2ndTryCharArray {
+public class VA2ndTryCharArray {
 
 
     public static void main(String[] args) {
