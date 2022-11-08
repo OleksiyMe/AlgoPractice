@@ -3,7 +3,7 @@ package ValidAnagram;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VA4_1tryHashMap {
+public class VA4_1tryHashMapSecondBestTime23ms {
 
 
     public static void main(String[] args) {
