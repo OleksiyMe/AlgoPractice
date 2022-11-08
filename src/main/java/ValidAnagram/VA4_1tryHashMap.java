@@ -3,7 +3,7 @@ package ValidAnagram;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VA4tryHashMap {
+public class VA4_1tryHashMap {
 
 
     public static void main(String[] args) {
@@ -25,8 +25,8 @@ public class VA4tryHashMap {
             Character chT = t.charAt(i);
             map.put(chT, map.getOrDefault(chT, 0) - 1);
         }
-       map.entrySet().removeIf(e -> e.getValue() == 0);
-      //  map.values().removeIf(p -> p == 0);
+        //   map.entrySet().removeIf(e -> e.getValue() == 0);
+        map.values().removeIf(p -> p == 0);
         return map.isEmpty();
     }
 }
