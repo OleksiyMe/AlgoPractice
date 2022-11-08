@@ -3,13 +3,13 @@ package ValidAnagram;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ValidAnagram4tryHashMap {
+public class ValidAnagram5tryHashMap {
 
 
     public static void main(String[] args) {
 
-        String s = "anagram",
-                t = "nagaram";
+        String s = "ab",
+                t = "ba";
 
         System.out.println("\"" + s + "\" is valid anagram of \"" + t + "\"\n" +
                 validAnagram(s, t));
@@ -24,9 +24,13 @@ public class ValidAnagram4tryHashMap {
             map.put(chS, map.getOrDefault(chS, 0) + 1);
             Character chT = t.charAt(i);
             map.put(chT, map.getOrDefault(chT, 0) - 1);
+            if (map.containsKey(chS) && map.get(chS) == 0) map.remove(chS);
+            if (map.containsKey(chT) && map.get(chT) == 0) map.remove(chT);
         }
-        map.entrySet().removeIf(e -> e.getValue() == 0);
-
+        //    System.out.println(map);
+        //   map.entrySet().removeIf(e -> e.getValue() == 0);
+        //  System.out.println(map);
+        System.out.println(map);
         return map.isEmpty();
     }
 }
