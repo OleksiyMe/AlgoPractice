@@ -45,15 +45,12 @@ public class _3rdTry {
         }
         long result = Long.parseLong(sb.toString());
 
-        if (result < Math.pow(-2, 31)) {
-            result = (long) Math.pow(-2, 31);
-            return (int) result;
+        if (result < Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
         }
-        if (result > (Math.pow(2, 31)) - 1) {
-            result = (long) (Math.pow(2, 31)) - 1;
-            return (int) result;
+        if (result > Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
         }
-
         return (int) result;
     }
 
