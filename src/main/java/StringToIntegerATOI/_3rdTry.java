@@ -27,11 +27,15 @@ public class _3rdTry {
         StringBuilder sb = new StringBuilder(s.substring(pointer));
 
         //dealing with +- or -+ case
-        if (sb.length() > 1 && !Character.isDigit(sb.charAt(0)) && !Character.isDigit(sb.charAt(1))) return 0;
-        if (sb.length() == 1 && !Character.isDigit(sb.charAt(0))) return 0;      // case if whole string is "+" or "-"
+        if (sb.length() > 1
+                && !Character.isDigit(sb.charAt(0))
+                && !Character.isDigit(sb.charAt(1))) return 0;
+        // case if whole string is just "+" or "-"
+        if (sb.length() == 1 && !Character.isDigit(sb.charAt(0))) return 0;
 
         pointer = 0;
-        if (!Character.isDigit(sb.charAt(0))) pointer = 1; //jumping over + or - if one of them is present
+        //jumping over + or - if one of them is present
+        if (!Character.isDigit(sb.charAt(0))) pointer = 1;
 
         //finding the end of our num
         while (Character.isDigit(sb.charAt(pointer))) {

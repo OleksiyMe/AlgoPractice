@@ -8,9 +8,18 @@ public class TryMyRegex {
 
         String s1 ="    1234124sdfafs";
         String s2 ="    -1234124sdfafs";
-        String s3 ="    +1234124sdfafs";
+        String s3 ="    -+1234124sdfafs";
 
-        String regex ="^(\\s*\\d+)|(\\s*-\\d+)|(\\s*\\Q+\\E\\d+)";
+       // String regex ="^(\\s*\\d+)|(\\s*-?\\d+)|(\\s*\\Q+\\E?\\d+)";
+       // String regex ="^\\s*(-|\\Q+\\E)?\\d+";
+        String regex ="^\\s*[-\\Q+\\E]?\\d+";
+       /* do the following: start, any or no one ' ', one + or - or no one,
+       then one or more digits
+
+        +  -- means one or more
+       * -- means no one, one or more
+        ? -- no one or one
+       \\Q+\\E   -- special type of escaping for + sign*/
 
         Pattern pattern = Pattern.compile(regex);  //creating a Pattern object
 

@@ -16,7 +16,7 @@ public class _2ndTryLeetCodeDoNotAcceptMatcher {
 
         StringBuilder sb = new StringBuilder();
         long result = 0;
-        String regex = "^(\\s*\\d+)|(\\s*-\\d+)|(\\s*\\Q+\\E\\d+)";
+        String regex = "^\\s*[-\\Q+\\E]*\\d+";
 
         Pattern pattern = Pattern.compile(regex);  //creating a Pattern object
         Matcher matcher = pattern.matcher(s);      //creating a Matcher object
