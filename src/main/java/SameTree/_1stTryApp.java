@@ -22,7 +22,6 @@ public class _1stTryApp {
         result = true;
         preOrderTraversal(p, q);
         return result;
-
     }
 
     public static boolean result;
