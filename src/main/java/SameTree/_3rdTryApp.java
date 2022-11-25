@@ -22,7 +22,7 @@ public class _3rdTryApp {
     public static boolean isSameTree(TreeNode p, TreeNode q) {
         boolean result = true;
         if ((p == null && q != null) || (p != null && q == null)) return false;
-        if (p == null && q == null) return true;
+        if (q == null&& p==null) return true;
 
         result= p.val == q.val;
         // System.out.println("p=" + p.val + " q=" + q.val);
