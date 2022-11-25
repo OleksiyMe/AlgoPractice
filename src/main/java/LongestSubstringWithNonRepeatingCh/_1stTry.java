@@ -6,9 +6,9 @@ public class _1stTry {
 
     public static void main(String[] args) {
 
-        String s = "d";
+        String s = "abcabcbb";
 
-        System.out.println("The longest part of \"" + s + "\n is: " + lengthOfLongestSubstring(s));
+        System.out.println("The longest non repeating  part of \"" + s + "\"\n is: " + lengthOfLongestSubstring(s));
     }
 
     public static int lengthOfLongestSubstring(String s) {
