@@ -1,6 +1,6 @@
-package SumOfDigits;
+package SumOfDigitsRecursive;
 
-public class SumOfDigits {
+public class _1stTry {
 
     public static void main(String[] args) {
 
@@ -13,8 +13,9 @@ public class SumOfDigits {
         while (num > 0) {
             result += num % 10;
             num /= 10;
-
         }
-        return result;
+        if (result < 10) return result;
+        return sumOfDigits(result);
     }
+
 }
