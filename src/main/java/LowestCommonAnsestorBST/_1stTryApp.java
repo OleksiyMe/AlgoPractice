@@ -7,18 +7,15 @@ import java.util.Arrays;
 public class _1stTryApp {
     public static void main(String[] args) {
 
-        ArrayList<Integer> treeData = new ArrayList<>(Arrays.asList(6, 2, 8, 0, 4, 7, 9, 3, 5));
-        int p = 3,
-            q = 5;
+        int[] treeData = {6, 2, 8, 0, 4, 7, 9, 3, 5};
+        int     p = 4,
+                q = 2;
 
-        MyBST tree = new MyBST();
+        MyBST tree = new MyBST(treeData);
 
-        for (Integer each : treeData) {
-            tree.insert(each);
-        }
-       VisualizeTree.printTree(tree.root, null, false);
+        VisualizeTree.printTree(tree.root, null, false);
 
-       System.out.println("\nFor nodes " + p + " and " + q + " LCA is  " +
+        System.out.println("\nFor nodes " + p + " and " + q + " LCA is  " +
                 lowestCommonAncestor(tree.root, tree.nodeByVal(p), tree.nodeByVal(q))
         );
     }
@@ -33,10 +30,6 @@ public class _1stTryApp {
         if (p.val < root.val && q.val < root.val) return lowestCommonAncestor(root.left, p, q);
         //else go to the right subtree
         return lowestCommonAncestor(root.right, p, q);
-
-
     }
-
-
 }
 
