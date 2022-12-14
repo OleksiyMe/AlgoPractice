@@ -6,7 +6,7 @@ public class _3rdTry_withRegexAndMap {
 
     public static void main(String[] args) {
 
-        String input = "  “This” is an example!     of Example… abc";
+        String input = "  “This” is an 1example!     of Example… abc";
         System.out.println(freqOfWords(input));
 
     }
@@ -16,10 +16,10 @@ public class _3rdTry_withRegexAndMap {
         //leave only letters and spaces
         input = input.toLowerCase().replaceAll("[^a-zA-z ]", "");
         //remove duplicated spaces
-        input = input.replaceAll(" +", " ");
+       // input = input.replaceAll(" +", " ");
 
 
-        for (String each : input.trim().split(" ")) {
+        for (String each : input.trim().split(" +")) {
             result.put(each,result.getOrDefault(each,0)+1 ) ;
         }
 
