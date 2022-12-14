@@ -11,7 +11,7 @@ public class _1stTry_withoutRegexAndWithoutMap {
     private static String freqOfWords(String input) {
         StringBuilder sb = new StringBuilder();
 
-        for (char ch : input.trim().toLowerCase().toCharArray()) {
+        for (char ch : input.toLowerCase().toCharArray()) {
             //clear repeating spaces
             if (ch == ' ' && sb.charAt(sb.length() - 1) == ' ') continue;
             //clear all non alphabetical
@@ -21,7 +21,7 @@ public class _1stTry_withoutRegexAndWithoutMap {
         input = sb.toString();
         sb = new StringBuilder("{");
 
-        for (String each : input.split(" ")) {
+        for (String each : input.trim().split(" ")) {
             //count repeating each in input
             int count = (input.replace(each, each + 1).length() - input.length());
             //if we already counted word -- continue
