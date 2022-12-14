@@ -27,7 +27,7 @@ public class _2ndTry {
             //delete counted word
             input = input.replace(each, "");
         }
-        //making a pretty output, according task :)
+        //making a pretty output, according to task :)
         return (sb.toString() + "}").replace(", }", "}");
     }
 }
