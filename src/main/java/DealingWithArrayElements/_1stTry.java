@@ -15,15 +15,16 @@ public class _1stTry {
 
     private static int[] dealWithIt(int[] array) {
 
-        int[] result = new int[array.length];
+        int length=array.length;
+        int[] result = new int[length];
 
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < length; i++) {
             if (i == 0) {
                 result[i] = array[0] * array[1];
                 continue;
             }
-            if (i == array.length - 1) {
-                result[i] = array[array.length - 1] * array[array.length - 2];
+            if (i == length - 1) {
+                result[i] = array[length - 1] * array[length - 2];
                 continue;
             }
             result[i] = array[i - 1] * array[i + 1];
