@@ -4,14 +4,14 @@ public class _1stTry_withoutRegexAndWithoutMap {
 
     public static void main(String[] args) {
 
-        String input = "“This” is an example! of Example… abc";
+        String input = " “This” is an example! of Example… abc";
         System.out.println(freqOfWords(input));
     }
 
     private static String freqOfWords(String input) {
         StringBuilder sb = new StringBuilder();
 
-        for (char ch : input.toLowerCase().toCharArray()) {
+        for (char ch : input.trim().toLowerCase().toCharArray()) {
             //clear repeating spaces
             if (ch == ' ' && sb.charAt(sb.length() - 1) == ' ') continue;
             //clear all non alphabetical
