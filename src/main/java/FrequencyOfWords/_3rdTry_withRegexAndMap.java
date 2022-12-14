@@ -6,7 +6,7 @@ public class _3rdTry_withRegexAndMap {
 
     public static void main(String[] args) {
 
-        String input = "“This” is an example!     of Example… abc";
+        String input = "  “This” is an example!     of Example… abc";
         System.out.println(freqOfWords(input));
 
     }
@@ -19,7 +19,7 @@ public class _3rdTry_withRegexAndMap {
         input = input.replaceAll(" +", " ");
 
 
-        for (String each : input.split(" ")) {
+        for (String each : input.trim().split(" ")) {
             result.put(each,result.getOrDefault(each,0)+1 ) ;
         }
 
