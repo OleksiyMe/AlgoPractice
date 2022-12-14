@@ -1,6 +1,6 @@
 package FrequencyOfWords;
 
-public class _1stTry_withoutRegex {
+public class _1stTry_withoutRegexAndWithoutMap {
 
     public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package FrequencyOfWords;
 
-public class _2ndTry {
+public class _2ndTryWithRegex {
 
     public static void main(String[] args) {
 
@@ -10,7 +10,7 @@ public class _2ndTry {
     }
 
     private static String freqOfWords(String input) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         //leave only letters and spaces
         input = input.toLowerCase().replaceAll("[^a-zA-z ]", "");
         //remove duplicated spaces
@@ -23,11 +23,11 @@ public class _2ndTry {
             //if we already counted word -- continue
             if (count == 0) continue;
             //build result
-            sb.append(each + "=" + count + ", ");
+            result.append(each + "=" + count + ", ");
             //delete counted word
             input = input.replace(each, "");
         }
         //making a pretty output, according to task :)
-        return (sb.toString() + "}").replace(", }", "}");
+        return (result.toString() + "}").replace(", }", "}");
     }
 }
