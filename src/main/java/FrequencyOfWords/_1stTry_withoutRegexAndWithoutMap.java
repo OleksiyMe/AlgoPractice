@@ -4,7 +4,7 @@ public class _1stTry_withoutRegexAndWithoutMap {
 
     public static void main(String[] args) {
 
-        String input = " “This” is an example! of Example… abc";
+        String input = "  “This” is an example! of Example… abc";
         System.out.println(freqOfWords(input));
     }
 
