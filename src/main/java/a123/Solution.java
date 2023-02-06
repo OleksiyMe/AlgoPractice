@@ -1,9 +1,6 @@
 package a123;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Queue;
 
 class Solution {
 
@@ -11,16 +8,18 @@ class Solution {
         int[] candies = new int[]{2, 3, 5, 1, 3};
         int extraCandies = 3;
         System.out.println(
-                Arrays.toString(optimizeKidsWithCandies(candies, extraCandies))
+                Arrays.toString(optimizedKidsWithCandies(candies, extraCandies))
         );
     }
 
     public static boolean[] kidsWithCandies(int[] candies, int extraCandies) {
-        boolean[] result = new boolean[candies.length];
-        for (int i = 0; i < candies.length; i++) {
+
+        int length=candies.length;
+        boolean[] result = new boolean[length];
+        for (int i = 0; i < length; i++) {
             int tmpMax = candies[i] + extraCandies;
             boolean isTrueMax = true;
-                for (int j = 0; j < candies.length; j++) {
+                for (int j = 0; j < length; j++) {
                     if (i == j) continue;
                     isTrueMax &= tmpMax >= candies[j];
                 }
@@ -29,27 +28,28 @@ class Solution {
         return result;
     }
 
-    public static boolean[] optimizeKidsWithCandies(int[] candies, int extraCandies) {
-        boolean[] result = new boolean[candies.length];
+    public static boolean[] optimizedKidsWithCandies(int[] candies, int extraCandies) {
 
-        int max= Integer.MIN_VALUE;
-        for (int i = 0; i < candies.length; i++) {
-            max=Math.max(max,candies[i]);
+        int max= Integer.MIN_VALUE, length=candies.length;
+        boolean[] result = new boolean[length];
+
+        for (int candy : candies) {
+            max = Math.max(max, candy);
         }
-        for (int i = 0; i < candies.length; i++) {
+        for (int i = 0; i < length; i++) {
             result[i] = candies[i] >= max - extraCandies;
         }
         return result;
     }
 
-    public static boolean[] optimize1KidsWithCandies(int[] candies, int extraCandies) {
-        boolean[] result = new boolean[candies.length];
+    public static boolean[] optimized1KidsWithCandies(int[] candies, int extraCandies) {
 
         int[] copyOfCandies = candies.clone();
         Arrays.sort(copyOfCandies);
-        int max=copyOfCandies[candies.length-1];
+        int length=candies.length, max=copyOfCandies[length-1];
+        boolean[] result = new boolean[length];
 
-        for (int i = 0; i < candies.length; i++) {
+        for (int i = 0; i < length; i++) {
             result[i] = candies[i] >= max - extraCandies;
         }
         return result;
