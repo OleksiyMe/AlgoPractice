@@ -14,7 +14,7 @@ class Solution {
 
     public static boolean[] kidsWithCandies(int[] candies, int extraCandies) {
 
-        int length=candies.length;
+        int length = candies.length;
         boolean[] result = new boolean[length];
         for (int i = 0; i < length; i++) {
             int tmpMax = candies[i] + extraCandies;
@@ -30,14 +30,15 @@ class Solution {
 
     public static boolean[] optimizedKidsWithCandies(int[] candies, int extraCandies) {
 
-        int max= Integer.MIN_VALUE, length=candies.length;
+        int max = Integer.MIN_VALUE, length = candies.length;
         boolean[] result = new boolean[length];
 
         for (int candy : candies) {
             max = Math.max(max, candy);
         }
+        int threshold = max - extraCandies;
         for (int i = 0; i < length; i++) {
-            result[i] = candies[i] >= max - extraCandies;
+            result[i] = candies[i] >= threshold;
         }
         return result;
     }
@@ -46,7 +47,7 @@ class Solution {
 
         int[] copyOfCandies = candies.clone();
         Arrays.sort(copyOfCandies);
-        int length=candies.length, max=copyOfCandies[length-1];
+        int length = candies.length, max = copyOfCandies[length - 1];
         boolean[] result = new boolean[length];
 
         for (int i = 0; i < length; i++) {
