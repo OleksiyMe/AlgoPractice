@@ -2,7 +2,7 @@ package a123;
 
 import java.util.Arrays;
 
-class Solution {
+class kidsWithCandies {
 
     public static void main(String[] args) {
         int[] candies = new int[]{2, 3, 5, 1, 3};

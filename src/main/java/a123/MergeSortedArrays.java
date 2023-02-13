@@ -1,6 +1,8 @@
 package a123;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MergeSortedArrays {
 
@@ -11,7 +13,7 @@ public class MergeSortedArrays {
 //                nums2 = new int[]{0};
         int[] nums1 = new int[]{1, 2, 3, 0, 0, 0},
                 nums2 = new int[]{2, 5, 6};
-        merge2(nums1, nums2);
+        merge3(nums1, nums2);
         System.out.println(Arrays.toString(nums1));
     }
 
@@ -28,6 +30,7 @@ public class MergeSortedArrays {
             arr1[i] = arr2[j++];
         }
     }
+
     private static void shift(int[] arr, int i) {
         for (int j = arr.length - 1; j >= i; j--) {
             if (arr[j] == 0) continue;
@@ -41,7 +44,22 @@ public class MergeSortedArrays {
             arr1[i] = arr2[j++];
         }
         Arrays.sort(arr1);
+        // So big O for this code will be  O((n+m)log(n+n))
     }
+
+    public static void merge3(int[] arr1, int[] arr2) {
+        if (arr2.length == 0) return;
+        for (int i = 0, j = 0; i < arr1.length; i++) {
+            if (arr1[i] == 0) {
+                arr1[i] = arr2[j++];
+                continue;
+            }
+            if (arr1[i] < arr2[j]) continue;
+            int tmp = arr1[i];
+            arr1[i] = arr2[j];
+            arr2[j]=tmp;
+        }
+    }  // O(n)
 
 
 }
