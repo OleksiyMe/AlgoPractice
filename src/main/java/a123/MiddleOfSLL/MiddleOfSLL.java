@@ -19,7 +19,7 @@ public class MiddleOfSLL {
 
     static Node middleOfSLL(Node head) {
         Node pointerSlow=head, pointerFast=head;
-        while (pointerFast!= null) {
+        while (pointerFast!=null&&pointerFast.next!= null) {
             pointerSlow = pointerSlow.next;
             pointerFast = pointerFast.next.next;
         }

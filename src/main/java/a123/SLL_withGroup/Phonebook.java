@@ -117,6 +117,18 @@ public class Phonebook {
         }
     }
 
+    public void deleteDuplicates() {
+        Node current = head;
+        while (current != null) {
+            Node theNext = current.next;
+            while (theNext != null && theNext.email.equals(current.email)) {
+                theNext = theNext.next;
+            }
+            current.next = theNext;
+            current = theNext;
+        }
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         Node current = head;
