@@ -11,6 +11,7 @@ class MyLRUcache2 {
     private final Integer capacity;
     private Integer maxLastAccessTimeIndex;
 
+
     public MyLRUcache2(int capacity) {
         if (capacity < 1) throw new IllegalArgumentException("cacheSize must be greater or equal 1");
         this.capacity = capacity;
@@ -19,6 +20,7 @@ class MyLRUcache2 {
 
     public int get(int key) {
         if (map.containsKey(key)) {
+
             map.get(key)[1] = ++maxLastAccessTimeIndex;
             lastAccessMap.entrySet().removeIf(e->e.getValue().equals(key));
             lastAccessMap.put(maxLastAccessTimeIndex, key);

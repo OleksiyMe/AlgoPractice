@@ -1,6 +1,7 @@
 package a123.LRUcache;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class MyLRUcache1 {
@@ -15,7 +16,10 @@ public class MyLRUcache1 {
         maxLastAccessTimeIndex = Integer.MIN_VALUE;
     }
 
+
+
     public void put(Integer key, Integer value) {
+
 
         if (map.containsKey(key)) {
             LRU_entry newEntry = map.get(key);
