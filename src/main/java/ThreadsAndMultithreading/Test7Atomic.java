@@ -40,6 +40,6 @@ public class Test7Atomic {
     }
 
     public static void main(String[] args) {
-        Test7Atomic print = new Test7Atomic(40);
+        Test7Atomic print = new Test7Atomic(99);
     }
 }

@@ -1,5 +1,7 @@
 package ThreadsAndMultithreading.Counter;
 
+import ThreadsAndMultithreading.Counter.MyCounterRunnable;
+
 public class DriverClass  {
     public static void main (String[] args) throws InterruptedException{
 
@@ -12,6 +14,7 @@ public class DriverClass  {
         t1.start();
         t2.start();
         t3.start();
+        t1.join();
         t3.join();
         t2.join();
 

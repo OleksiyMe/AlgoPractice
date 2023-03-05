@@ -1,8 +1,8 @@
-package ThreadsAndMultithreading.Counter;
+package ThreadsAndMultithreading.CounterStatic;
 
 public class MyCounterRunnable implements Runnable {
 
-    private int counter;
+    private static int counter;
 
     @Override
     public void run() {
@@ -15,16 +15,17 @@ public class MyCounterRunnable implements Runnable {
         }
     }
 
-    private  void extracted() {
+    //Lock will be applied on Class level . java.lang.Class
+    private  static void extracted() {
 
         String threadName = Thread.currentThread().getName();
         System.out.println(threadName);
-        synchronized (this) {
+        synchronized (MyCounterRunnable.class) {
             counter++;
         }
     }
 
-    public int getCounter() {
+    public static int getCounter() {
         return counter;
     }
 
