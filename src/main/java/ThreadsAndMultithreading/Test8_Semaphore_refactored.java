@@ -13,45 +13,35 @@ public class Test8_Semaphore_refactored {
         this.counterMax = counterMax;
         this.semaphoreOdd = new Semaphore(1);
         this.semaphoreEven = new Semaphore(0);
-        new Thread(()->printOdd()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printEven()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printEven()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printEven()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printEven()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printOdd()).start();
-        new Thread(()->printOdd()).start();
+        new Thread(() -> printOdd()).start();
+        new Thread(() -> printOdd()).start();
+        new Thread(() -> printOdd()).start();
+        new Thread(() -> printEven()).start();
+        new Thread(() -> printOdd()).start();
+        new Thread(() -> printEven()).start();
     }
 
     public void printOdd() {
         doThisPrint(semaphoreOdd, semaphoreEven);
     }
+
     public void printEven() {
         doThisPrint(semaphoreEven, semaphoreOdd);
     }
+
     private void doThisPrint(Semaphore activeSemaphore, Semaphore blockedSemaphore) {
         while (true) {
             try {
                 activeSemaphore.acquire();
-                if (counter>counterMax) return;
-                System.out.println(counter++ +"   printed by "+Thread.currentThread().getName());
+                if (counter > counterMax) return;
+                System.out.println(counter++ + "   printed by " + Thread.currentThread().getName());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
-            }finally {
+            } finally {
                 blockedSemaphore.release();
             }
         }
     }
-
-
 
     public static void main(String[] args) {
         new Test8_Semaphore_refactored(100);
