@@ -3,16 +3,16 @@ package LowestCommonAnsestorBST;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class TreeNode {
+public class Node {
     int val;
-    TreeNode left;
-    TreeNode right;
+    Node left;
+    Node right;
 
-    public TreeNode(int val) {
+    public Node(int val) {
         this.val = val;
     }
 
-    public TreeNode(int val, TreeNode left, TreeNode right) {
+    public Node(int val, Node left, Node right) {
         this.val = val;
         this.left = left;
         this.right = right;

@@ -1,9 +1,5 @@
 package LowestCommonAnsestorBST;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class _1stTryApp {
     public static void main(String[] args) {
 
@@ -20,7 +16,7 @@ public class _1stTryApp {
         );
     }
 
-    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public static Node lowestCommonAncestor(Node root, Node p, Node q) {
 
         if (p == root || q == root) return root;  //if one of the nodes root --answer root
         if (p.val < root.val && q.val > root.val ||

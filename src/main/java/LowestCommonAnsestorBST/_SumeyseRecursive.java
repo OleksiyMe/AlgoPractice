@@ -16,7 +16,7 @@ public class _SumeyseRecursive {
         );
     }
 
-    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public static Node lowestCommonAncestor(Node root, Node p, Node q) {
 
         if (root == null) return null;
 

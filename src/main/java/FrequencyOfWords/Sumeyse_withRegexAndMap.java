@@ -14,8 +14,8 @@ public class Sumeyse_withRegexAndMap {
     private static String freqOfWords(String input) {
         if(input.isBlank())return "{}";
         HashMap<String, Integer> result = new HashMap<>();
-//String [] words =input.trim().replaceAll("[^A-Za-z]+", "").toLowerCase().split(" +");
-//String []words =input.trim().toLowerCase().split("[^A-Za-z]+");
+//String [] words =input.trim().replaceAll("[^TrieNode-Za-z]+", "").toLowerCase().split(" +");
+//String []words =input.trim().toLowerCase().split("[^TrieNode-Za-z]+");
         String[] words = input.trim().toLowerCase().split("\\W+");
         for (String word : words) {
             result.put(word, result.getOrDefault(word, 0) + 1);

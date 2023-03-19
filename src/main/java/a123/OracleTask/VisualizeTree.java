@@ -1,4 +1,5 @@
-package LowestCommonAnsestorBST;
+package a123.OracleTask;
+
 
 public class VisualizeTree {
 
@@ -26,7 +27,7 @@ public class VisualizeTree {
         }
 
         showTrunks(trunk);
-        System.out.println(" " + root.val);
+        System.out.println(" " + root.value);
 
         if (prev != null) {
             prev.str = prev_str;

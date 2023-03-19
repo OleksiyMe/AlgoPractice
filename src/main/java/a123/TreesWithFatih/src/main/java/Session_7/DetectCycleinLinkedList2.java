@@ -21,7 +21,7 @@ public class DetectCycleinLinkedList2 {
     private static ListNode getIntersect(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
-        // A fast pointer will either loop around a cycle and meet the slow
+        // TrieNode fast pointer will either loop around a cycle and meet the slow
         // pointer or reach the `null` at the end of a non-cyclic list.
         while (fast != null && fast.next != null) {
             slow = slow.next;

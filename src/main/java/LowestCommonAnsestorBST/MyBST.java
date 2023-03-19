@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MyBST {
 
-    TreeNode root;
+    Node root;
 
     public MyBST(int[] treeData) {
         insert(treeData);
@@ -19,12 +19,12 @@ public class MyBST {
     }
 
     void insert(int value) {
-        TreeNode newNode = new TreeNode(value);
+        Node newNode = new Node(value);
         if (root == null) {
             root = newNode;
             return;
         }
-        TreeNode current = root;
+        Node current = root;
         while (true) {
             if (value <= current.val) {
 
@@ -47,9 +47,9 @@ public class MyBST {
         }
     }
 
-    public TreeNode nodeByVal(int val) {
+    public Node nodeByVal(int val) {
         if (root == null) return null;
-        TreeNode current = root;
+        Node current = root;
         while (current != null) {
             if (val < current.val) current = current.left;
             else if (val > current.val) current = current.right;
