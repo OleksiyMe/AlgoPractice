@@ -73,6 +73,6 @@ public class Test6 {
 
         // t4.start();
 
-        //  Test monitor=new Test();
+        //  Test1 monitor=new Test1();
     }
 }

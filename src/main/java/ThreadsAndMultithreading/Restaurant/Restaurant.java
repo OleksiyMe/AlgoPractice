@@ -83,6 +83,6 @@ public class Restaurant {
 //      "Order up! Waitperson got Order 8",
 //      "Order up! Waitperson got Order 9",
 //      "Out of food, closing"
-//    }, Test.WAIT);
+//    }, Test1.WAIT);
   }
 } ///:~

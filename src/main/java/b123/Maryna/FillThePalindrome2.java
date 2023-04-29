@@ -9,7 +9,7 @@ public class FillThePalindrome2 {
         String input = "?b?";
         int length = input.length();
         String result = "";
-        for (int i = input.length() - 1; i >= 0; i--) {
+        for (int i = 0; i <length; i++) {
             char currentChar = input.charAt(i);
             char symmetricChar = input.charAt(length - i - 1);
 
