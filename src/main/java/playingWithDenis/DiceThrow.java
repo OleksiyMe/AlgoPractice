@@ -3,10 +3,7 @@ package playingWithDenis;
 import java.security.SecureRandom;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -15,18 +12,17 @@ public class DiceThrow {
     static volatile int sumOfTries = 0, minThrows = Integer.MAX_VALUE, maxTrrows = Integer.MIN_VALUE;
 
 
-    public static Map<Boolean, Integer[]> throwDices(int numberOfDice) {
-        Map<Boolean, Integer[]> map = new HashMap<>();
-        Integer[] result = new Integer[numberOfDice];
+    public static int[] throwDices(int numberOfDice) {
+        int[] result = new int[numberOfDice+1];
         boolean allTheSame = true;
-        SecureRandom secureRandom = new SecureRandom();
+        Random secureRandom = new Random();
 
-        for (int i = 0; i < numberOfDice; i++) {
+        for (int i = 1; i <= numberOfDice; i++) {
             result[i] = secureRandom.nextInt(6) + 1;
-            if (i != 0) allTheSame &= result[i - 1] == result[i];
+            if (i != 1) allTheSame &= result[i - 1] == result[i];
         }
-        map.put(allTheSame, result);
-        return map;
+        if(allTheSame) result[0]=1;else result[0]=0;
+        return result;
     }
 
     public static void main(String... privet) throws InterruptedException {
@@ -45,8 +41,8 @@ public class DiceThrow {
             //  System.out.println("Attempt number " + j);
             Runnable toRun = () -> {
                 for (int i = 0; true; i++) {
-                    Map<Boolean, Integer[]> map = throwDices(numberOfDice);
-                    if (map.containsKey(true)) {
+                    int [] result = throwDices(numberOfDice);
+                    if (result[0]==1) {
                         // System.out.println("\t\t" + (1 + i) + " throws and we get: " + Arrays.toString(map.get(true)));
                         synchronized (DiceThrow.class) {
                             sumOfTries += i + 1;
@@ -73,8 +69,8 @@ public class DiceThrow {
 
         System.out.println();
         System.out.println("As for " + numberOfAttempts + " attempts we needed to throw "
-                + numberOfDice + " dice averagely " +
-                sumOfTries / numberOfAttempts + " times to get all of them the same.");
+                + numberOfDice + " dice " +
+                sumOfTries / numberOfAttempts + " on average times to get all of them the same.");
         System.out.println("Min throws " + minThrows);
         System.out.println("Max throws " + maxTrrows);
         System.out.println("It took "+secondsSpent+ " seconds.");
