@@ -72,7 +72,6 @@ public class DiceThrow {
         }
         executorService.shutdown();
 
-
         while (!executorService.isTerminated()) {
 
         }
