@@ -19,7 +19,7 @@ public class VA1stTryStringBuilder {
             int index = sb.indexOf("" + ch);
             if (index >= 0) sb.delete(index,index+1);
         }
-        return sb.isEmpty();
+        return sb.length()==0;
 
     }
 }

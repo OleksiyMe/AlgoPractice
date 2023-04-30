@@ -33,7 +33,8 @@ public class _1stTry {
             sbTemp.append(sb.charAt(0));
             sb.delete(0, 1);
         }
-        if (sbTemp.isEmpty()) result = 0;
+
+        if (sbTemp.length()==0) result = 0;
         else if (sbTemp.length() > 12) {
             sbTemp.delete(1, sbTemp.length() - 11);
         }
