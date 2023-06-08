@@ -1,6 +1,6 @@
 package a11;
 
-public class Test {
+public class PositiveNegativeZero {
 
     public static void main(String[] args) {
         double negativeZero = -0d;

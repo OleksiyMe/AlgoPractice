@@ -1,5 +1,6 @@
 package playingWithDenis;
 
+import java.security.SecureRandom;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -17,7 +18,7 @@ public class DiceThrow {
         boolean allTheSame = true;
         //    if (desiredNumber!=0)
 
-        Random secureRandom = new Random();
+        SecureRandom secureRandom = new SecureRandom();
 
         for (int i = 1; i <= numberOfDice; i++) {
             result[i] = secureRandom.nextInt(6) + 1;
