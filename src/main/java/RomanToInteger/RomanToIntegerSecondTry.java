@@ -22,7 +22,7 @@ public class RomanToIntegerSecondTry {
         dic.put("XL", 40);
         dic.put("L", 50);
         dic.put("XC", 90);
-        dic.put("C", 100);
+        dic.put("Counters", 100);
         dic.put("CD", 400);
         dic.put("D", 500);
         dic.put("CM", 900);
