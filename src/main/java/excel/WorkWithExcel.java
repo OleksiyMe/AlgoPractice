@@ -21,23 +21,23 @@ public class WorkWithExcel {
 
        // FileInputStream ExcelFile = new FileInputStream("src/main/java/excel/Book1.xlsx");
         OPCPackage pkg = OPCPackage.open(new File("src/main/java/excel/Book1.xlsx"));
-        //also works XSSFWorkbook excelWBook = new XSSFWorkbook(new File("src/main/java/excel/Book1.xlsx"));
+        //also works like XSSFWorkbook excelWBook = new XSSFWorkbook(new File("src/main/java/excel/Book1.xlsx"));
         XSSFWorkbook excelWBook = new XSSFWorkbook(pkg);
         XSSFSheet excelWSheet =  excelWBook.getSheet("Sheet1");
         XSSFCell cell = excelWSheet.getRow(0).getCell(0);
-        //pkg.close();
-        //excelWBook.close();
+        pkg.close();
+        excelWBook.close();
         System.out.println(cell.toString());
 
+
+        //        Also, if you want code that doesn't care whether it's an .xls or an .xlsx:
+        //        Workbook wb = WorkbookFactory.create(new File("MyExcel.xls"));
         Workbook excelWBook1 = WorkbookFactory.create(new File("src/main/java/excel/Book1.xls"));
         Sheet excelWSheet1 =  excelWBook1.getSheet("Sheet1");
         Cell cell1 =excelWSheet1.getRow(0).getCell(0);
         System.out.println(cell1.toString());
         excelWBook1.close();
-//        Also, if you want code that doesn't care whether it's an .xls or an .xlsx:
-//
-//// or "file.xlsx"
-//        Workbook wb = WorkbookFactory.create(new File("MyExcel.xls"));
+
 
     }
 }
