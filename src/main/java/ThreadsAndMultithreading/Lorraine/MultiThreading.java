@@ -21,7 +21,7 @@ public class MultiThreading {
                 
                 counter++;
                 
-                notify();
+                notifyAll();
             }
         }
     }
@@ -44,7 +44,7 @@ public class MultiThreading {
                 
                 counter++;
                 
-                notify();
+                notifyAll();
             }
         }
     }
@@ -52,15 +52,21 @@ public class MultiThreading {
     // Driver Code
     public static void main(String[] args) {
        
-        N = 10;
+        N = 100;
         
         MultiThreading mt = new MultiThreading();
         
         Thread t1 = new Thread(() -> mt.printEvenNumber());
 
         Thread t2 = new Thread(() -> mt.printOddNumber());
+
+        Thread t3 = new Thread(() -> mt.printEvenNumber());
+
+        Thread t4 = new Thread(() -> mt.printOddNumber());
         
-        t1.start();
+        t1.start(); t3.start();
         t2.start();
+
+        t4.start();
     }
 }

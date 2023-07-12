@@ -1,5 +1,9 @@
 package Maryna;
 
+import net.jcip.annotations.NotThreadSafe;
+
+//example of jcip-annotation
+@NotThreadSafe
 public class PasswordValidation {
 
 //    String_PasswordValidation

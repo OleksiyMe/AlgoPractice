@@ -18,11 +18,18 @@ public class ThreadPools {
             executorScaled.execute(()-> System.out.println(Thread.currentThread().getName()));
 
         }
-        executorFixed.shutdown();
         executor.shutdown();
 
-        System.out.println(((ThreadPoolExecutor)executorScaled).getPoolSize());
+        executorFixed.shutdown();
+        while(!executorFixed.isTerminated()){}
+
+        int poolSize=((ThreadPoolExecutor)executorScaled).getPoolSize();
         executorScaled.shutdown();
+        while(!executorScaled.isTerminated()){}
+
+        System.out.println(poolSize);
+
+
 
     }
 }
