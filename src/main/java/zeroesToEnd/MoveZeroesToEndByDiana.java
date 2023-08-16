@@ -8,19 +8,19 @@ public class MoveZeroesToEndByDiana {
         System.out.println(Arrays.toString(moveZeroes(arr)));
     }
 
-    public static int[] moveZeroes(int[] arr){
+    public static int[] moveZeroes(int[] nums){
 
-        int pointer1 = 0;
-        int pointer2 = 0;
+        int indexOfFirstZeroElement = 0;
+        int tmp = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] != 0){
-                pointer2 = arr[pointer1];
-                arr[pointer1] = arr[i];
-                arr[i] = pointer2;
-                pointer1++;
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i] != 0){
+                tmp = nums[indexOfFirstZeroElement];
+                nums[indexOfFirstZeroElement] = nums[i];
+                nums[i] = tmp;
+                indexOfFirstZeroElement++;
             }
         }
-        return arr;
+        return nums;
     }
 }

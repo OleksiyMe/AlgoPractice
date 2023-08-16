@@ -8,22 +8,22 @@ public class MoveZeroesToEndBySumeyse {
         System.out.println(Arrays.toString(moveZeroesToEnd(given)));
     }
 
-    public static int[] moveZeroesToEnd(int[] arr) {
+    public static int[] moveZeroesToEnd(int[] nums) {
 
         int fast = 0, slow = 0;
-        while (fast < arr.length - 1) {
+        while (fast < nums.length - 1) {
 
-            if (arr[slow] != 0) {
+            if (nums[slow] != 0) {
                 slow++;
             }
-            if (fast <= slow || arr[fast] == 0) {
+            if (fast <= slow || nums[fast] == 0) {
                 fast++;
             }
-            if (arr[slow] == 0 && arr[fast] != 0) {
-                arr[slow] = arr[fast];
-                arr[fast] = 0;
+            if (nums[slow] == 0 && nums[fast] != 0) {
+                nums[slow] = nums[fast];
+                nums[fast] = 0;
             }
         }
-        return arr;
+        return nums;
     }
 }

@@ -19,9 +19,9 @@ public class Maryna_Unique  implements Cloneable{
     public Maryna_Unique clone(){
 
         try {
-            Maryna_Unique newInstance=(Maryna_Unique) super.clone();
-            newInstance.array=array.clone();
-            return newInstance;
+            Object newInstance= super.clone();
+            ((Maryna_Unique)newInstance).array=array.clone();
+            return (Maryna_Unique)newInstance;
         }catch (CloneNotSupportedException e){
             System.err.println(e.getMessage());
             return null;
