@@ -10,7 +10,7 @@ public class RemoveDuplicatesFromStr {
 
         String input = "AABACACGGAZXZ";
 
-        System.out.println("our input is " + input + "\nOur output is " +
+        System.out.println("Our input is " + input + "\nOur output is " +
                 removeDuplicates(input));
 
 
